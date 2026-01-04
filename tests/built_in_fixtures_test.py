@@ -6,6 +6,7 @@ from src.hex_converter import (  # noqa: F401
     write_hexadecimal_to_decimal,
 )
 
+
 # aplica o marcador de dependency para todos os testes do arquivo
 pytestmark = pytest.mark.dependency  # NÃO REMOVA ESSA LINHA
 
@@ -26,3 +27,14 @@ def test_capsys(capsys):
 
     assert captured.out == "10\n"
     assert captured.err == ""
+
+
+def test_tmp_path(tmp_path):
+    content = "10"
+    output_path = tmp_path / "output.txt"
+
+    write_hexadecimal_to_decimal("a", output_path)
+
+    assert output_path.is_file()
+
+    assert output_path.read_text() == content
