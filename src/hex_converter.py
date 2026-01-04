@@ -17,3 +17,6 @@ def write_hexadecimal_to_decimal(hex_digit: str, output_file: Path) -> None:
 def main() -> int:
     input_number = input("Digite um número hexadecimal: ")
     return hexadecimal_to_decimal(input_number)
+
+
+# Initial Commit
