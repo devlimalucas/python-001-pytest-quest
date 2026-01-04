@@ -1,6 +1,6 @@
 import pytest
 
 
-@pytest.mark.dependency
+@pytest.mark.dependency()
 def test_dependency_mark():
-    pass
+    assert True
